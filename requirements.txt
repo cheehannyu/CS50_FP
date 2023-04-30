@@ -44,7 +44,7 @@ jsbeautifier==1.14.7
 kiwisolver==1.4.4
 lib50==3.0.6
 MarkupSafe==2.1.2
-matplotlib==3.7.1
+matplotlib==3.5.3
 natsort==8.3.1
 numpy==1.24.2
 packaging==23.1
