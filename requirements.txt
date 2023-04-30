@@ -29,6 +29,7 @@ Flask==2.2.3
 Flask-Session==0.4.0
 fonttools==4.39.3
 greenlet==2.0.2
+gunicorn==20.1.0
 help50==3.0.5
 html5lib==1.1
 icdiff==2.0.6
