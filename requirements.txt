@@ -20,7 +20,6 @@ compare50==1.2.6
 contourpy==1.0.6
 cryptography==40.0.2
 cs50==9.2.5
-CS50-VSIX-Client @ file:///tmp/cs50.vsix/python-clients/cs50vsix-client
 cssselect2==0.7.0
 cycler==0.11.0
 docutils==0.16
