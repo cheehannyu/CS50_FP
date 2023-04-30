@@ -16,9 +16,6 @@ redirect_uri = 'https://google.com.sg/'
 
 try:
     token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
-except:
-    os.remove(f".cache-{username}")
-    token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
 
 spotifyObject = spotipy.Spotify(auth=token)
 user = spotifyObject.current_user()
