@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Songs
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" style="color: white">Song Name</th>
+        </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through the database entries to display them in this table -->
+        {% for item in recommend %}
+            <tr>
+                <td style="color: white;">{{ item[0] }} by {{ item[1] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+{% endblock %}
