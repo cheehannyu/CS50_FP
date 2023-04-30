@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recommendations
+{% endblock %}
+
+{% block main %}
+    <form action="/recommendations" method="post">
+        <div class="container">
+            <select required placeholder="mood" name="mood" id="mood" autofocus>
+                <option value="none" selected disabled>Mood</option>
+                {% for i in list_moods %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <p></p>
+        <div class="form-group row">
+            <label style="color:#FFFFFF; font-weight: bold" for="genre" class="col-sm-2 col-form-label">Genre</label>
+            <div class="col-sm-10">
+                <input autocomplete="off" autofocus class="form-control form-control-lg" id="genre" name="genre" placeholder="What genre do you want to listen to?" type="text" required>
+            </div>
+        </div>
+        <p></p>
+        <div class="form-group row">
+            <label style="color:#FFFFFF; font-weight: bold" for="year" class="col-sm-2 col-form-label">Year Released</label>
+            <div class="col-sm-10">
+                <input autocomplete="off" autofocus class="form-control form-control-lg" id="year" name="year" placeholder="Which year should the songs be released in?" type="text" required>
+            </div>
+        </div>
+        <p></p>
+        <div class="form-group row">
+            <label style="color:#FFFFFF; font-weight: bold" for="year" class="col-sm-2 col-form-label">How Many Songs?</label>
+            <div class="col-sm-10">
+                <input autocomplete="off" autofocus class="form-control form-control-lg" id="length" name="length" placeholder="How many songs do you want? (Max 10)" type="number" min="1" max="10" required>
+            </div>
+        </div>
+        <p></p>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}
