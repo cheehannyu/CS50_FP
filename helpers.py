@@ -8,13 +8,16 @@ import spotipy.util as util
 from json.decoder import JSONDecodeError
 # User ID = 129206905
 
-username = sys.argv[1]
+username = 129206905
 scope = 'playlist-read-private'
 client_id = 'f894c2bd3ea34b8d8e3942df44008f2b'
 client_secret = 'a307ed1d74a5453293469170e49f1c3d'
 redirect_uri = 'https://google.com.sg/'
 
 try:
+    token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
+except:
+    os.remove(f".cache-{username}")
     token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
 
 spotifyObject = spotipy.Spotify(auth=token)
