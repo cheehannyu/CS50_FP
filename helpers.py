@@ -20,7 +20,6 @@ def suggest(genre, year, length, acoustic, dance, energy, valence, Acoustic, Dan
     genre = genre
     dance = dance
     year = year
-    acoustic = acoustic
     N = 50
     i = 0
     recommend_names = []
