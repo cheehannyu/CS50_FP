@@ -1,14 +1,7 @@
-import os
-import sys
-import json
 import spotipy
-import webbrowser
+
 from spotipy.oauth2 import SpotifyClientCredentials
 
-# User ID = 129206905
-
-username = 129206905
-scope = 'playlist-read-private'
 client_id = 'f894c2bd3ea34b8d8e3942df44008f2b'
 client_secret = 'a307ed1d74a5453293469170e49f1c3d'
 
