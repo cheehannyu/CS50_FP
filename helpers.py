@@ -14,10 +14,9 @@ client_id = 'f894c2bd3ea34b8d8e3942df44008f2b'
 client_secret = 'a307ed1d74a5453293469170e49f1c3d'
 redirect_uri = 'https://google.com.sg/'
 
-token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri)
+token = util.prompt_for_user_token(username, scope, client_id, client_secret, redirect_uri, show_dialog=False)
 
 spotifyObject = spotipy.Spotify(auth=token)
-user = spotifyObject.current_user()
 
 # Returns the top [length] number of songs that satisfy the 5 given criteria
 def suggest(genre, year, length, acoustic, dance, energy, valence, Acoustic, Dance, Energy, Valence):
