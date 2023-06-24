@@ -1,0 +1,14 @@
+# cheehannyu recommends
+#### Video Demo:  https://www.youtube.com/watch?v=s2TmZ75M-08
+#### Description:
+This project is about using Spotify's Web API to recommend users songs using a few inputs. The project is a flask app that opens with a form that prompts the user for a few things, namely their mood, a desired genre to listen to, the year they want to listen from, and how many songs they want suggested.
+
+To implement this, I used the the audio features of each track, namely acousticness, danceability, energy and valence, values which are stored by Spotify's database to describe each individual track. Therefore, I will query Spotify's database for 50 random songs at a time, retrieving their audio features. Thereafter, I'll pre-set the desired range of values for the audio features using the mood that the user gave me. If the values fall within the range set, the song is returned. If not enough songs are found to return as many as the user requested, suggest() will call the query again, repeating the process until enough songs can be returned.
+
+With the form, each mood is hardcoded to provide a certain range of values to check. The user should select 1 of 4 moods in order for sugges() to run. Genre can be found in the link at the bottom, which lists all 900+ spotify genres that will turn up a result when queried through the API. Year is simply the year in which the songs should be released in. The reason why I only allow 10 songs to be requested at once is in the interest of performance. If the user requests 500 songs, the page would take very long to load as the API has to be constantly queried for more songs until 500 suitable ones can be found. Therefore, 10 is good enough where the time spent for the function to return is not that long.
+
+In the interest of time, I did not implement any fail-safes such as if the form isn't submitted correctly. I could have done so, but chose not to as it would have been time consuming and merely repetition. Features that I wanted to implement but decided against would be a refresh button, that would have suggested new songs using the same form as before, but without having to re-submit. Also, I wanted to make an alternate form that would allow users to adjust the value-range of acousticness, danceability, energy and valence themselves, but didn't because it would have taken too long and could be hard to balance for users that use ranges that are too specific.
+
+I actually tried to port this flask app onto an online webservice called Render, but ran into many issues with it and was ultimately unable to host it. The flask app does run just fine on the development server that can be run using "flask run". If ever I manage to get it up, I'll be sharing with friends, family and maybe even the cs50 discord :D
+
+That's all. This was CS50!
